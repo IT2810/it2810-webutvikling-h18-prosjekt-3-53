@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import {styles} from 'styles/base.js';
+import { styles } from 'constants/Base';
 
 export default class Signup extends React.Component {
     render() {
