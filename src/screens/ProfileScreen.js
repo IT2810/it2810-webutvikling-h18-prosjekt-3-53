@@ -1,14 +1,12 @@
-// TaskList screen
-
 import React from 'react';
 import { View, Text } from 'react-native';
-import {styles} from 'styles/base.js';
+import { styles } from 'constants/Base';
 
-export default class TaskList extends React.Component {
+export default class Profile extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.titleText}>TaskList</Text>>
+                <Text style={styles.titleText}>Profile</Text>>
             </View>
         );
     }
