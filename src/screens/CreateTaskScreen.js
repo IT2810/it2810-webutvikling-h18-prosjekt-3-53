@@ -1,14 +1,12 @@
-// TaskView screen
-
 import React from 'react';
 import { View, Text } from 'react-native';
-import {styles} from 'styles/base.js';
+import { styles } from 'constants/Base';
 
-export default class TaskView extends React.Component {
+export default class CreateTask extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.titleText}>TaskView</Text>>
+                <Text style={styles.titleText}>CreateTask</Text>
             </View>
         );
     }
