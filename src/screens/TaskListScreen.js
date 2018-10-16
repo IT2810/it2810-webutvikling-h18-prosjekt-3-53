@@ -1,10 +1,13 @@
-// TaskList screen
-
 import React from 'react';
 import { View, Text } from 'react-native';
-import {styles} from 'styles/base.js';
+import { styles } from 'constants/Base';
+import { connect } from 'react-redux';
 
-export default class TaskList extends React.Component {
+const mapStateToProps = state => {
+    return {...state};
+}
+
+class TaskListScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
@@ -13,3 +16,5 @@ export default class TaskList extends React.Component {
         );
     }
 }
+
+export default connect(mapStateToProps)(TaskListScreen);

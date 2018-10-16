@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { colors } from 'constants/Colors';
 
 export const dimensions = {
     fullHeight: Dimensions.get('window').height,
@@ -22,7 +23,7 @@ export const fonts = {
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: colors.background,
         alignItems: 'center',
         justifyContent: 'center',
     },

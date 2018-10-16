@@ -1,9 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
-import { colors } from 'styles/colors';
-import TaskList from 'components/screens/TaskList';
-import Profile from 'components/screens/Profile';
+import { colors } from 'constants/Colors';
+import TaskList from 'screens/TaskListScreen';
+import Profile from 'screens/ProfileScreen';
 
 export default MainNavigator = createBottomTabNavigator({
     TaskList: {
