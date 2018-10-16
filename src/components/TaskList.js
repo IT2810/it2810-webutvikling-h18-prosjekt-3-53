@@ -1,19 +1,15 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React from "react";
 
-export default class TaskList extends React.Component {
-    constructor(props) {
-        super(props);
-      }
-    render() {
-        return (
-            <View>
-                <div>
-                    {props.tasks.map((task) => (
-                        <Task id={task.id} title={task.title} description={task.description} status={task.status} end date={task.endDate}/>
-                    )}
-                </div>
-            </View>
-        )
-    }
+// import the Contact component
+import Contact from "./Task";
+
+
+function TaskList(props) {
+  return (
+    <div>
+      {props.tasks.map(task => <Task key={task.id} title={task.title} description={task.description} status={task.status} />)}
+     </div>
+  );
 }
+
+export default TaskList;
