@@ -7,7 +7,7 @@ const mapStateToProps = state => {
     return {...state};
 }
 
-class TaskList extends React.Component {
+class TaskListScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
@@ -17,4 +17,4 @@ class TaskList extends React.Component {
     }
 }
 
-export default connect(mapStateToProps)(TaskList);
+export default connect(mapStateToProps)(TaskListScreen);
