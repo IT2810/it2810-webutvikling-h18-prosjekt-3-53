@@ -1,13 +1,37 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { styles } from 'constants/Base';
+import CreateTask from 'components/CreateTask';
+import { connect } from 'react-redux';
+import { addTask } from 'actions';
 
-export default class CreateTaskScreen extends React.Component {
+const mapStateToProps = state => {
+    return {...state};
+}
+
+class CreateTaskScreen extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.createTask = this.createTask.bind(this);
+    }
+
+    createTask(title, description) {
+        let id = this.props.tasks.length;
+        this.props.dispatch(addTask({
+            id: id,
+            title: title,
+            description: description
+        }));
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.titleText}>CreateTask</Text>
+                <CreateTask onAdd={this.createTask}/>
             </View>
         );
     }
 }
+
+export default connect(mapStateToProps)(CreateTaskScreen);

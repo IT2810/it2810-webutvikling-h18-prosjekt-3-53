@@ -12,7 +12,7 @@ import LoadingScreen from 'screens/LoadingScreen';
 const persistConfig = {
   key: 'root',
   storage: storage,
-  whitelist: ['profile, tasks']
+  whitelist: ['profile', 'tasks']
 }
 
 const persistedReduer = persistReducer(persistConfig, rootReducer);
