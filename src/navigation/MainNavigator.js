@@ -2,12 +2,13 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
 import { colors } from 'constants/Colors';
-import TaskList from 'screens/TaskListScreen';
-import Profile from 'screens/ProfileScreen';
+import TaskListScreen from 'screens/TaskListScreen';
+import CreateTaskScreen from 'screens/CreateTaskScreen';
+import ProfileScreen from 'screens/ProfileScreen';
 
 export default MainNavigator = createBottomTabNavigator({
     TaskList: {
-        screen: TaskList,
+        screen: TaskListScreen,
         navigationOptions: {
             tabBarLabel: 'Tasks',
             tabBarIcon: ({tintColor}) => (
@@ -15,8 +16,17 @@ export default MainNavigator = createBottomTabNavigator({
             )
         }
     },
+    CreateTask: {
+        screen: CreateTaskScreen,
+        navigationOptions: {
+            tabBarLabel: 'New Task',
+            tabBarIcon: ({tintColor}) => (
+                <FontAwesome name='plus-circle' size={24} color={tintColor} />
+            )
+        }
+    },
     Profile: {
-        screen: Profile,
+        screen: ProfileScreen,
         navigationOptions: {
             tabBarLabel: 'Profile',
             tabBarIcon: ({tintColor}) => (
