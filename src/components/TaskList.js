@@ -1,14 +1,16 @@
 import React from "react";
+import { View } from 'react-native';
+import Task from "components/Task";
 
-// import the Contact component
-import Contact from "./Task";
-
-
-function TaskList(props) {
+function TaskList({tasks}) {
   return (
-    <div>
-      {props.tasks.map(task => <Task key={task.id} title={task.title} description={task.description} status={task.status} />)}
-     </div>
+    <View>
+      {
+        tasks.map(
+          task => <Task key={task.id} title={task.title} description={task.description} status={task.status} />
+        )
+      }
+     </View>
   );
 }
 

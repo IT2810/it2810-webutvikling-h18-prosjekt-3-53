@@ -1,12 +1,13 @@
 import React from "react";
+import { View, Text } from 'react-native';
 
 function Task(props) {
   return (
-    <div className="task">
-      <span>{props.title}</span>
-      <span>{props.description}</span>
-      <span>{props.status}</span>
-    </div>
+    <View className="task">
+      <Text>{props.title}</Text>
+      <Text>{props.description}</Text>
+      <Text>{props.status}</Text>
+    </View>
   );
 }
 
