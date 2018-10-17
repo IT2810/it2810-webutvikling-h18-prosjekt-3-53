@@ -12,7 +12,7 @@ class TaskListScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <TaskList tasks={this.props.tasks} />
+                <TaskList tasks={this.props.tasks} filter ={this.props.filter} />
             </View>
         );
     }
