@@ -16,12 +16,13 @@ class CreateTaskScreen extends React.Component {
         this.createTask = this.createTask.bind(this);
     }
 
-    createTask(title, description) {
+    createTask(title, description, motivation) {
         let id = this.props.tasks.length;
         this.props.dispatch(addTask({
             id: id,
             title: title,
-            description: description
+            description: description,
+            motivation: motivation
         }));
     }
 
