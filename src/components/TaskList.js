@@ -1,9 +1,9 @@
 import React from "react";
-import { View, FlatList, StyleSheet, Text } from 'react-native';
+import { View, FlatList, StyleSheet, Text, TouchableHighlight } from 'react-native';
 import Task from "components/Task";
 import { dimensions, fonts, padding } from 'constants/Base';
 
-function TaskList({tasks, filter}) {
+function TaskList({tasks, filter, selectTask}) {
   const filtered_list = [];
   tasks.forEach(function (task) {
     if(task.status && task.status.toLowerCase() == filter.split("_")[1].toLowerCase()) filtered_list.push(task);
@@ -11,8 +11,14 @@ function TaskList({tasks, filter}) {
   return (
     <View style={styles.container}>
         <FlatList
-          data={filtered_list}
-          renderItem={({item}) => <Text style={styles.item}>{item.title}</Text>}
+          data={tasks}
+          renderItem={({item}) => {
+            return (
+              <TouchableHighlight onPress={() => selectTask(item.id)}>
+                <Text style={styles.item}>{item.title}</Text>
+              </TouchableHighlight>
+            );
+          }}
           keyExtractor={item => item.id.toString()}
         />
       </View>
