@@ -1,24 +1,32 @@
 const tasks = (state = [], action) => {
     switch(action.type) {
         case 'ADD_TASK':
+            let task = {
+                ...action.task,
+                status: 'ACTIVE'
+            }
             return [
                 ...state,
-                action.task
+                task
             ];
         case 'COMPLETE_TASK':
-            return [
-                ...state,
-                {
-                    status: 'COMPLETED'
+            return state.map((task) => {
+                if (task.id === action.taskId) {
+                    return Object.assign({}, task, {
+                        status: 'COMPLETED'
+                    });
                 }
-            ];
+                return task;
+            });
         case 'ARCHIVE_TASK':
-            return [
-                ...state,
-                {
-                    status: 'ARCHIVED'
+            return state.map((task) => {
+                if (task.id === action.taskId) {
+                    return Object.assign({}, task, {
+                        status: 'ARCHIVED'
+                    });
                 }
-            ];
+                return task;
+            })
         default:
             return state;
     }
