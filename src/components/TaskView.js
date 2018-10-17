@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
-import { completeTask, archiveTask } from 'actions';
+import { completeTask, closeTask } from 'actions';
 import { styles } from 'constants/Base';
 import { colors } from 'constants/Colors';
 
@@ -10,7 +10,7 @@ class TaskView extends React.Component {
     constructor(props) {
         super(props);
         this.completeTask = this.completeTask.bind(this);
-        this.archiveTask = this.archiveTask.bind(this);
+        this.closeTask = this.closeTask.bind(this);
     }
 
     completeTask() {
@@ -19,9 +19,9 @@ class TaskView extends React.Component {
         this.props.discard();
     }
 
-    archiveTask() {
+    closeTask() {
         let task = this.props.task;
-        this.props.dispatch(archiveTask(task.id));
+        this.props.dispatch(closeTask(task.id));
         this.props.discard();
     }
 
@@ -47,7 +47,7 @@ class TaskView extends React.Component {
                         color={colors.good}
                     />}
                     {task.status == 'ACTIVE' && <Button
-                        onPress={this.archiveTask}
+                        onPress={this.closeTask}
                         title='Close Task'
                         color={colors.bad}
                     />}

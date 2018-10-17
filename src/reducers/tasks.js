@@ -18,11 +18,11 @@ const tasks = (state = [], action) => {
                 }
                 return task;
             });
-        case 'ARCHIVE_TASK':
+        case 'CLOSE_TASK':
             return state.map((task) => {
                 if (task.id === action.taskId) {
                     return Object.assign({}, task, {
-                        status: 'ARCHIVED'
+                        status: 'CLOSED'
                     });
                 }
                 return task;
