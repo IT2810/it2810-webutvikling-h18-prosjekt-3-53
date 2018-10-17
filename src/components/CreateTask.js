@@ -16,7 +16,7 @@ export default class CreateTask extends React.Component {
     onAdd() {
         let title = this.state.title.slice();
         let description = this.state.description.slice();
-        if (title && description) {
+        if (title) {
             this.props.onAdd(title, description);
             this.setState({
                 title: '',
