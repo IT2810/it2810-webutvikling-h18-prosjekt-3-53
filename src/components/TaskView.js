@@ -1,14 +1,35 @@
 import React from 'react';
 import { Modal, Text, View, Button } from 'react-native';
+import { connect } from 'react-redux';
+import { completeTask, archiveTask } from 'actions';
 import { styles } from 'constants/Base';
+import { colors } from 'constants/Colors';
 
 class TaskView extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.completeTask = this.completeTask.bind(this);
+        this.archiveTask = this.archiveTask.bind(this);
+    }
+
+    completeTask() {
+        let task = this.props.task;
+        this.props.dispatch(completeTask(task.id));
+        this.props.discard();
+    }
+
+    archiveTask() {
+        let task = this.props.task;
+        this.props.dispatch(archiveTask(task.id));
+        this.props.discard();
+    }
 
     render() {
 
         let task = this.props.task;
         if (!task) {
-            return <Text>No task selected</Text>;
+            return null;
         }
 
         return (
@@ -17,10 +38,22 @@ class TaskView extends React.Component {
                 transparent={false}
                 visible={this.props.modalVisible}>
                 <View style={styles.container}>
-                    <Text>{task.title}</Text>
+                    <Text style={styles.titleText}>{task.title}</Text>
+                    <Text>{task.description}</Text>
+                    <Text>{'status: ' + task.status}</Text>
+                    {task.status == 'ACTIVE' && <Button
+                        onPress={this.completeTask}
+                        title='Complete Task'
+                        color={colors.good}
+                    />}
+                    {task.status == 'ACTIVE' && <Button
+                        onPress={this.archiveTask}
+                        title='Close Task'
+                        color={colors.bad}
+                    />}
                     <Button
                         onPress={this.props.discard}
-                        title='Discard'
+                        title='Back'
                     />
                 </View>
             </Modal>
@@ -29,4 +62,4 @@ class TaskView extends React.Component {
 
 }
 
-export default TaskView;
+export default connect()(TaskView);
