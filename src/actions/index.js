@@ -1,13 +1,13 @@
 export const SET_NAME = 'SET_NAME';
 export const ADD_TASK = 'ADD_TASK';
 export const COMPLETE_TASK = 'COMPLETE_TASK';
-export const ARCHIVE_TASK = 'ARCHIVE_TASK';
+export const CLOSE_TASK = 'CLOSE_TASK';
 export const SET_FILTER = 'SET_FILTER';
 
 export const Filter = {
     SHOW_ACTIVE: 'SHOW_ACTIVE',
     SHOW_COMPLETED: 'SHOW_COMPLETED',
-    SHOW_ARCHIVED: 'SHOW_ARCHIVED'
+    SHOW_CLOSED: 'SHOW_CLOSED'
 };
 
 export function setName(name) {
@@ -22,8 +22,8 @@ export function completeTask(taskId) {
     return { type: COMPLETE_TASK, taskId }
 }
 
-export function archiveTask(taskId) {
-    return { type: ARCHIVE_TASK, taskId }
+export function closeTask(taskId) {
+    return { type: CLOSE_TASK, taskId }
 }
 
 export function setFilter(filter) {
