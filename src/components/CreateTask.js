@@ -8,7 +8,8 @@ export default class CreateTask extends React.Component {
         super(props);
         this.state = {
             title: '',
-            description: ''
+            description: '',
+            motivation: '',
         };
         this.onAdd = this.onAdd.bind(this);
     }
@@ -16,11 +17,13 @@ export default class CreateTask extends React.Component {
     onAdd() {
         let title = this.state.title.slice();
         let description = this.state.description.slice();
+        let motivation = this.state.motivation.slice();
         if (title) {
-            this.props.onAdd(title, description);
+            this.props.onAdd(title, description, motivation);
             this.setState({
                 title: '',
-                description: ''
+                description: '',
+                motivation: ''
             });
         }
     }
@@ -39,6 +42,12 @@ export default class CreateTask extends React.Component {
                     multiline={true}
                     value={this.state.description}
                     onChangeText={(description) => this.setState({description})}
+                />
+                <TextInput
+                    placeholder='Task Motivation'
+                    multiline={true}
+                    value={this.state.motivation}
+                    onChangeText={(motivation) => this.setState({motivation})}
                 />
                 <Button
                     onPress={this.onAdd}
