@@ -45,6 +45,7 @@ class TaskListScreen extends React.Component {
             <View style={styles.container}>
                 <TaskList
                     tasks={this.props.tasks} filter ={this.props.filter}
+                    filter={this.props.filter}
                     selectTask={this.selectTask}
                 />
                 <TaskView

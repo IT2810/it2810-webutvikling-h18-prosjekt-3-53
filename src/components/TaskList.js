@@ -11,7 +11,7 @@ function TaskList({tasks, filter, selectTask}) {
   return (
     <View style={styles.container}>
         <FlatList
-          data={tasks}
+          data={filtered_list}
           renderItem={({item}) => {
             return (
               <TouchableHighlight onPress={() => selectTask(item.id)}>
