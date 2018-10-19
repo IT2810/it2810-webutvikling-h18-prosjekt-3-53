@@ -60,7 +60,6 @@ class TaskView extends React.Component {
             </Modal>
         )
     }
-
 }
 
 export default connect()(TaskView);
