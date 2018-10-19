@@ -39,9 +39,9 @@ class TaskView extends React.Component {
                 visible={this.props.modalVisible}>
                 <View style={styles.container}>
                     <Text style={styles.titleText}>{task.title}</Text>
-                    <Text>{'description: ' + task.description}</Text>
-                    <Text>{'motivation: ' + task.motivation}</Text>
-                    <Text>{'status: ' + task.status}</Text>
+                    <Text style={styles.info}>{'Description: ' + task.description}</Text>
+                    <Text style={styles.info}>{'Motivation: ' + task.motivation}</Text>
+                    <Text style={styles.info}>{'Status: ' + task.status}</Text>
                     {task.status == 'ACTIVE' && <Button
                         onPress={this.completeTask}
                         title='Complete Task'

@@ -1,15 +1,21 @@
 import Expo from 'expo';
 import React from 'react';
 import {Pedometer} from 'expo';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, size, Modal} from 'react-native';
 import {styles} from 'constants/Base';
 import {colors} from 'constants/Colors';
+import { setFilter, Filter } from 'actions';
 
 export default class ProfileScreen extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     state = {
-        isPedometerAvailable: 'checking',
         pastStepCount: 0,
-        currentStepCount: 0
+        currentStepCount: 0,
+        closedCount: 0,
+        completedCount: 0
     };
 
     componentDidMount() {
@@ -17,7 +23,7 @@ export default class ProfileScreen extends React.Component {
     };
 
     componentWillUnmount() {
-        this.unsubscrive();
+        this._unsubscribe();
     };
 
     _subscribe = () => {
@@ -26,19 +32,6 @@ export default class ProfileScreen extends React.Component {
                 currentStepCount: result.steps
             });
         });
-
-        Pedometer.isAvailableAsync().then(
-            result => {
-                this.setState({
-                    isPedometerAvailable: String(result)
-                });
-            },
-            error => {
-                this.setState({
-                    isPedometerAvailable: 'Could not get isPedometerAvailable: ' + error
-                });
-            }
-        );
 
         const end = new Date();
         const start = new Date();
@@ -58,23 +51,29 @@ export default class ProfileScreen extends React.Component {
     _unsubscribe = () => {
         this._subscription && this._subscription.remove();
         this._subscription = null;
-    }
+    };
+
+    /*countClosed(){
+        let task = this.props.task;
+        let closed = new Map();
+        if (task.status == 'CLOSED') {
+            closed.set('task');
+            setState.closedCount = console.log(closed.size);
+        }
+    };*/
+
 
 
     render() {
         return (
             <View style={styles.container}>
-                //<Image style={styles.avatar} source={{uri: '/assets/profile-icon.png'}}/>
                 <View style={styles.body}>
-                    <View style={styles.bodyContent}>
-                        <Text style={styles.name}>John Doe</Text>
-                        <Text style={styles.description}>Tasks completed: x</Text>
-                        <Text style={styles.description}>Tasks closed: y</Text>
-
-                    </View>
+                    <Text style={styles.titleText}>John Doe</Text>
+                    {/*<Text style={styles.baseText}>Tasks completed: {this.state.completedCount}</Text>
+                    <Text style={styles.baseText}>Tasks closed: {this.state.closedCount}</Text>*/}
                 </View>
-                <Text>Steps taken in the last 24 hours: {this.state.pastStepCount}</Text>
-                <Text>Step count while application is open: {this.state.currentStepCount}</Text>
+                <Text style={styles.steps}>Steps taken in the last 24 hours: {this.state.pastStepCount}</Text>
+                <Text style={styles.baseText}>Step count while application is open: {this.state.currentStepCount}</Text>
             </View>
         );
     }

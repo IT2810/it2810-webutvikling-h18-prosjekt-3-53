@@ -32,5 +32,12 @@ export const styles = StyleSheet.create({
     },
     titleText: {
         fontSize: fonts.xl
+    },
+    steps: {
+        fontSize: fonts.md,
+        marginTop:20
+    },
+    info: {
+        padding: 20,
     }
 });
