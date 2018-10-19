@@ -4,7 +4,7 @@ import {Pedometer} from 'expo';
 import {View, Text, Image, StyleSheet, size, Modal} from 'react-native';
 import {styles} from 'constants/Base';
 import {colors} from 'constants/Colors';
-import { setFilter, Filter } from 'actions';
+import {setFilter, Filter} from 'actions';
 
 export default class ProfileScreen extends React.Component {
     constructor(props) {
@@ -61,7 +61,6 @@ export default class ProfileScreen extends React.Component {
             setState.closedCount = console.log(closed.size);
         }
     };*/
-
 
 
     render() {

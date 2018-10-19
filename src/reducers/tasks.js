@@ -1,5 +1,5 @@
 const tasks = (state = [], action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'ADD_TASK':
             let task = {
                 ...action.task,

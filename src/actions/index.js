@@ -11,21 +11,21 @@ export const Filter = {
 };
 
 export function setName(name) {
-    return { type: SET_NAME, name };
+    return {type: SET_NAME, name};
 }
 
 export function addTask(task) {
-    return { type: ADD_TASK, task };
+    return {type: ADD_TASK, task};
 }
 
 export function completeTask(taskId) {
-    return { type: COMPLETE_TASK, taskId }
+    return {type: COMPLETE_TASK, taskId}
 }
 
 export function closeTask(taskId) {
-    return { type: CLOSE_TASK, taskId }
+    return {type: CLOSE_TASK, taskId}
 }
 
 export function setFilter(filter) {
-    return { type: SET_FILTER, filter }
+    return {type: SET_FILTER, filter}
 }

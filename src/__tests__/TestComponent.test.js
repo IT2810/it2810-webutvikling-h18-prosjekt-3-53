@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { shallow } from 'enzyme';
+import {View, Text} from 'react-native';
+import {shallow} from 'enzyme';
 import TestComponent from 'components/TestComponent';
 
-const wrapper = shallow(<TestComponent />)
+const wrapper = shallow(<TestComponent/>)
 
 describe('TestComponent', () => {
     it('should render 1 view component', () => {

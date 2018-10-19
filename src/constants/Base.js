@@ -1,5 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { colors } from 'constants/Colors';
+import {StyleSheet, Dimensions} from 'react-native';
+import {colors} from 'constants/Colors';
 
 export const dimensions = {
     fullHeight: Dimensions.get('window').height,
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     },
     steps: {
         fontSize: fonts.md,
-        marginTop:20
+        marginTop: 20
     },
     info: {
         padding: 20,

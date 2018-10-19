@@ -1,5 +1,5 @@
 const profile = (state = {}, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'SET_NAME':
             return {
                 ...state,
