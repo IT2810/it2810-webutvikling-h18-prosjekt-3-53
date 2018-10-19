@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
-import { styles } from 'constants/Base';
+import {View, Text, TextInput, Button} from 'react-native';
+import {styles} from 'constants/Base';
 
 export default class CreateTask extends React.Component {
 

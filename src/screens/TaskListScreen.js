@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableHighlight, StyleSheet } from 'react-native';
-import { connect } from 'react-redux';
-import { setFilter, Filter } from 'actions';
+import {View, Text, TouchableHighlight, StyleSheet} from 'react-native';
+import {connect} from 'react-redux';
+import {setFilter, Filter} from 'actions';
 import TaskList from 'components/TaskList';
 import TaskView from 'components/TaskView';
-import { fonts, padding } from 'constants/Base';
-import { colors } from 'constants/Colors';
+import {fonts, padding} from 'constants/Base';
+import {colors} from 'constants/Colors';
 
 const mapStateToProps = state => {
     return {...state};
@@ -61,11 +61,12 @@ class TaskListScreen extends React.Component {
                         <Text style={[styles.button, filter == 'SHOW_ACTIVE' && styles.buttonActive]}>Active</Text>
                     </TouchableHighlight>
                     <TouchableHighlight onPress={() => this.setFilter(Filter.SHOW_COMPLETED)}>
-                        <Text style={[styles.button, filter == 'SHOW_COMPLETED' && styles.buttonActive]}>Completed</Text>
+                        <Text
+                            style={[styles.button, filter == 'SHOW_COMPLETED' && styles.buttonActive]}>Completed</Text>
                     </TouchableHighlight>
                 </View>
                 <TaskList
-                    tasks={this.props.tasks} filter ={this.props.filter}
+                    tasks={this.props.tasks} filter={this.props.filter}
                     filter={this.props.filter}
                     selectTask={this.selectTask}
                 />
@@ -81,22 +82,22 @@ class TaskListScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-     flex: 1,
-     paddingTop: padding.lg
+        flex: 1,
+        paddingTop: padding.lg
     },
     filterButtons: {
-      flex: 0,
-      flexDirection: 'row',
-      justifyContent: 'space-evenly'
+        flex: 0,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly'
     },
     button: {
-      fontSize: fonts.lg,
-      alignItems: 'center',
-      padding: padding.md
+        fontSize: fonts.lg,
+        alignItems: 'center',
+        padding: padding.md
     },
     buttonActive: {
-      backgroundColor: colors.primary
+        backgroundColor: colors.primary
     }
-  });
+});
 
 export default connect(mapStateToProps)(TaskListScreen);

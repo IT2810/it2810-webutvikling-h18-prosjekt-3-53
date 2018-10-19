@@ -1,9 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
-import { styles } from 'constants/Base';
+import {View} from 'react-native';
+import {styles} from 'constants/Base';
 import CreateTask from 'components/CreateTask';
-import { connect } from 'react-redux';
-import { addTask } from 'actions';
+import {connect} from 'react-redux';
+import {addTask} from 'actions';
 
 const mapStateToProps = state => {
     return {...state};

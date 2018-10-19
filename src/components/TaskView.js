@@ -1,9 +1,9 @@
 import React from 'react';
-import { Modal, Text, View, Button } from 'react-native';
-import { connect } from 'react-redux';
-import { completeTask, closeTask } from 'actions';
-import { styles } from 'constants/Base';
-import { colors } from 'constants/Colors';
+import {Modal, Text, View, Button} from 'react-native';
+import {connect} from 'react-redux';
+import {completeTask, closeTask} from 'actions';
+import {styles} from 'constants/Base';
+import {colors} from 'constants/Colors';
 
 class TaskView extends React.Component {
 
@@ -39,15 +39,15 @@ class TaskView extends React.Component {
                 visible={this.props.modalVisible}>
                 <View style={styles.container}>
                     <Text style={styles.titleText}>{task.title}</Text>
-                    <Text>{'description: ' + task.description}</Text>
-                    <Text>{'motivation: ' + task.motivation}</Text>
-                    <Text>{'status: ' + task.status}</Text>
-                    {task.status == 'ACTIVE' && <Button
+                    <Text style={styles.info}>{'Description: ' + task.description}</Text>
+                    <Text style={styles.info}>{'Motivation: ' + task.motivation}</Text>
+                    <Text style={styles.info}>{'Status: ' + task.status}</Text>
+                    {task.status === 'ACTIVE' && <Button
                         onPress={this.completeTask}
                         title='Complete Task'
                         color={colors.good}
                     />}
-                    {task.status == 'ACTIVE' && <Button
+                    {task.status === 'ACTIVE' && <Button
                         onPress={this.closeTask}
                         title='Close Task'
                         color={colors.bad}
@@ -60,7 +60,6 @@ class TaskView extends React.Component {
             </Modal>
         )
     }
-
 }
 
 export default connect()(TaskView);
