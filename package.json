@@ -14,18 +14,29 @@
     "setupTestFrameworkScriptFile": "<rootDir>/jestSetup.js"
   },
   "dependencies": {
-    "expo": "^30.0.1",
-    "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "@types/googlemaps": "^3.36.3",
+    "@types/markerclustererplus": "^2.1.33",
+    "@types/react": "^16.8.19",
+    "acorn": "^6.1.1",
+    "braces": ">=2.3.1",
+    "eslint": "^5.16.0",
+    "expo": "^33.0.3",
+    "handlebars": "^4.1.2",
+    "js-yaml": "^3.13.1",
+    "merge": "^1.2.1",
+    "react": "^16.8.3",
+    "react-native": "^0.59.9",
+    "react-native-reanimated": "^1.0.1",
     "react-navigation": "^2.17.0",
-    "react-redux": "^5.0.7",
+    "react-redux": "^7.0.3",
     "redux": "^4.0.1",
-    "redux-persist": "^5.10.0"
+    "redux-persist": "^5.10.0",
+    "ws": "^7.0.0"
   },
   "devDependencies": {
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0",
-    "jest-expo": "^30.0.0",
-    "react-dom": "16.3.1"
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest-expo": "^33.0.0",
+    "react-dom": "16.8.6"
   }
 }
