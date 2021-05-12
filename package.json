@@ -23,7 +23,7 @@
     "expo": "^33.0.3",
     "handlebars": "^4.5.3",
     "js-yaml": "^3.13.1",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "react": "^16.8.3",
     "react-native": "^0.59.9",
     "react-native-reanimated": "^1.0.1",
